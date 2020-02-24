@@ -26,7 +26,7 @@ return array(
 
         'connection1' => array(
             'host'   => '168.232.79.90',
-            'port'  => 22,
+            'port'  => 21,
             'username' => 'jjolon_1',
             'password'   => '123456',
             'passive'   => true,
