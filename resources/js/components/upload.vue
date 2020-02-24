@@ -1,28 +1,38 @@
 <template>
-  <div class="container-fluid">
-    <!-- <el-row :gutter="20">
-      <el-col :span="30" >
-            <div class="card  mb-3 mt-4"  >
+  <div class="container">
+     <el-row :gutter="30">
+      <el-col  >
+            <!-- <div class="card  mb-3 mt-4"  >
                 <div class="card-header text-white bg-info">Directorio Activo</div>
                     <div class="card-body">
                         <h5 class="card-title">Subir archivos al Directorio</h5>
-                       
+                        <el-upload
+                          class="upload-demo"
+                          drag
+                          action="https://jsonplaceholder.typicode.com/posts/"
+                          :on-preview="handlePreview"
+                          :on-remove="handleRemove"
+                          :file-list="fileList"
+                          multiple>
+                          <i class="el-icon-upload"></i>
+                          <div class="el-upload__text">Suelta tu archivo aquí o <em>haz clic para cargar</em></div>
+                          <div slot="tip" class="el-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
+                        </el-upload>
                     </div>
-                </div> -->
-            <el-upload
+                </div>  -->
+            <!-- <el-upload
             class="upload-demo"
             action="https://jsonplaceholder.typicode.com/posts/"
             :on-change="handleChange"
             :file-list="fileList">
             <el-button size="small" type="primary">Clic para subir archivo</el-button>
             <div slot="tip" class="el-upload__tip">Solo archivos jpg/png con un tamaño menor de 500kb</div>
-            </el-upload>
-        <!-- <el-card :body-style="{ margin:'10px'}">
+            </el-upload> -->
+        
+        <el-card :body-style="{ margin:'10px'}">
           <div slot="header" class="clearfix">
-            <span>Documentar Evento</span>
+            <span>Directorio Activo de Active Directory</span>
           </div>
-
-          
           <div class="text item">
             <el-form
               ref="form"
@@ -31,28 +41,6 @@
               v-for="(formulario, fm) of DataResult"
               :key="fm"
             >
-              <el-form-item label="Tema:">
-                <el-input v-model="formulario.accion" :disabled="true" style="font-size:1.2em;"></el-input>
-              </el-form-item>
-              <el-form-item label="Responsable: ">
-                <el-input
-                  v-model="formulario.responsable"
-                  :disabled="true"
-                  style="font-size:1.2em;"
-                ></el-input>
-              </el-form-item>
-              <el-form-item label="Fecha:">
-                <el-col :span="11">
-                  <el-date-picker
-                    type="date"
-                    placeholder="Pick a date"
-                    v-model="formulario.created_at"
-                    style="width: 100%;"
-                    :disabled="true"
-                  ></el-date-picker>
-                </el-col>
-              </el-form-item>
-
               <el-form-item label="Archivo:">
                 <el-upload
                   class="upload-demo"
@@ -78,42 +66,18 @@
 
               </el-form-item>
             </el-form>
-
             <el-form label-width="120px">
-              <el-form-item label="Mensajes:">
-                <div class="chat">
-                  <div class="chatbox" v-for="(chat, ch) of Message" :key="ch">
-                    <div v-if="chat.user_id ===  user" class="mine messages">
-                      
-                      <div class="message last"><span class="userData_last">{{ chat.name }}</span>{{ chat.message}}</div>
-                      
-                    </div>
-
-                    <div v-else class="yours messages">
-                      <div class="message"><span class="userData">{{ chat.name }}</span>{{ chat.message}}</div>
-                    </div>
-                  </div>
-                </div>
-              </el-form-item>
-              <el-form-item label="Anotaciones:">
-                <el-input type="textarea" name="anotacion" v-model="textarea"></el-input>
-              </el-form-item>
               <el-form-item>
-                <el-button type="primary" @click="onSubmit">Documentar</el-button>
+                <el-button type="primary" @click="onSubmit">Subir</el-button>
                 <el-button>Cancel</el-button>
               </el-form-item>
             </el-form>
           </div>
         </el-card> 
-      </el-col>-->
-
-      <!-- </el-col>
-    </el-row> -->
+      </el-col>
+    </el-row>
   </div>
 </template>
-
-
-
 <script>
 export default {
     data() {
