@@ -11,8 +11,8 @@
 |
 */
 
-// Route::get('/','directoryUpload@index');
-// Route::get('/','directoryUpload@directory_data');
+Route::get('/','directoryUpload@index');
+Route::get('read_file','directoryUpload@listarArchivos2');
 
 	
-Route::get('/', ['as ' => 'ftp', 'uses' => 'FtpController@index']);
+// Route::get('/', ['as ' => 'ftp', 'uses' => 'FtpController@index']);
