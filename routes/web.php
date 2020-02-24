@@ -12,3 +12,4 @@
 */
 
 Route::get('/','directoryUpload@index');
+Route::get('/','directoryUpload@directory_data');
